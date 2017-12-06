@@ -1,4 +1,4 @@
-import algo1
+import functies
 import start
 
 def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph):
@@ -14,7 +14,7 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph):
         START = start.kies_start(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
         z = START
         
-        trein = algo1.Trein([START], [START], [z], 0)    
+        trein = functies.Trein([START], [START], [z], 0)    
 
         # While loop gaat door tot traject is kleiner of gelijk dan 120.
         while (trein.tijdsduur < MAX):

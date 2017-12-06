@@ -113,22 +113,9 @@ def function(beginstation):
     print "Het is maar " ,shortestRoute, "minuutjes reizen TJOEK TJOEK"
 
 
-    
-
-
-    #eindstation = Castricumb
-
     return correspondingStation
 
-print function("Zaanda")
-
-## schrijf een functie die als input een stad heeft, en als output de nieuwe stad waar hij uitkomt. welke kant je opgaat maakt niet uit, dus misschien randomize???
-                
-
-#print matrix
-
-
-#plt.show()        
+   
 
 
 

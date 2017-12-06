@@ -1,6 +1,6 @@
 # STAAT ALLEMAAL  NU OP NATIONAAL
-# ALGO2 tot. sporen aanpassen!
-import algo2
+# scorefunctie tot. sporen aanpassen!
+import scorefunctie
 import trajectmaker
 import minuten
 import hillclimber
@@ -10,19 +10,19 @@ import time
 start_time = time.clock()
 
 # AANTAL ITERATIES VAN DE HILLCLIMBER
-HILL = 5000
+HILL = 10000
 
 # AANTAL MINUTEN
 MAX = 180
 
 # AANTAL TRAJECTEN
-RANGE = 11
+RANGE = 3
 
 # TOTAAL AANTAL VERBINDINGEN
 TOTAAL_SPOREN = 89
 
-STATIONS = 'StationsNationaal.csv'
-VERBINDINGEN = 'ConnectiesNationaal.csv' 
+STATIONS = 'Data/StationsNationaal.csv'
+VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
 
 
 
@@ -43,7 +43,7 @@ trajecten_algemeen_oud = trajecten[3]
 
 # SCORE UITREKENEN
 totale_tijdsduur_oud = minuten.minuten(alle_tijdsduur_oud)
-score_oud = algo2.score(alle_trajecten_oud, totale_tijdsduur_oud, sporen_oud, TOTAAL_SPOREN)
+score_oud = scorefunctie.score(alle_trajecten_oud, totale_tijdsduur_oud, sporen_oud, TOTAAL_SPOREN)
 
 #HILLCLIMBER TOEPASSEN
 resultaat = hillclimber.hillclimber(score_oud, alle_trajecten_oud, alle_tijdsduur_oud, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen_oud, sporen_oud, TOTAAL_SPOREN)
