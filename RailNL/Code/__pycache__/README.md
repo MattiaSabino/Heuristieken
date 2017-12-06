@@ -1,1 +1,3 @@
 # Pycache
+
+Alle geimporteerde bestanden.
