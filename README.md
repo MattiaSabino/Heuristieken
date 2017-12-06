@@ -144,11 +144,17 @@ niet gereden? Kies nearest Neighbour.
 - Alle sporen bereden? Kies nearest Neighbour. 
 - Als alleen terug weg mogelijk is? Kies terug weg. (terug weg is laatste keus).
 - Traject stopt bij 120 minuten. 
+- Als alle sporen & alle stations al zijn geweest: break.
+- Pas scorefunctie toe, als het niet nodig was een extra traject te maken, maar
+  het wel gebeurd is scorefunctie: trajecten(t) -1.
 
 Het tweede algoritme dat wordt toegepast is een 'hill climber':
 Verschil met Nearest Neighbour algoritme is het start punt: 
 - Eerst kiest het algoritme de uithoeken. 
-- Per te maken traject een random station. 
+- Als alle uithoeken gekozen zijn kies per te maken traject: een random station. 
+- Maak traject a.d.h.v. constraints van algoritme 1.
+- Pas scorefunctie toe, als het niet nodig was een extra traject te maken, maar
+  het wel gebeurd is scorefunctie: trajecten(t) -1.
 - Bewaar de betere oplossing.
 - Itereer x aantal keer. 
 
