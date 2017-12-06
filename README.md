@@ -86,20 +86,17 @@ Uitkomsten van ons nearest neigbour algoritme:
 
 Holland:
 aangepaste score functie:
-S-Min = 1 * 10000 - ((6*20) + 672/10000) = 9879,93
+S-Min = 1 * 10000 - ((6*20) + 672/10000) = 9879,9328
 
 orginele score functie:
-S-Min = 1 * 10000 - ((6*20) + 672/100000) = 9879,99
+S-Min = 1 * 10000 - ((6*20) + 672/100000) = 9879,99382
 
 Heel Nederland:
 aangepaste score functie: 
-S-Min = 24/28 * 10000 - ((5*20) + (566/10000) = 8471,37.
+S-Min = 1 * 10000 - ((14*20) + (2398/10000)) = 9719.7602.
 
 orginele score functie:
-S-Min = 24/28 * 10000 - ((5*20) + (566/100000) = 8471,42.
-
-
-
+S-Min = 1 * 10000 - ((14*20) + (2398/100000)) = 9719.97602.
 
 
 #### Lowerbound: Hoogst mogelijke score berekend met de score-functie waarbij 
@@ -135,8 +132,27 @@ bron: http://www.thechalkface.net/resources/Travelling_Salesman_England.pdf
 
 ### Algoritmes
 
-In deze case wordt gebruik gemaakt van een ongerichte graaf. Aangezien je heen en weer kunt tussen knopen(stations).
-Het tweede algoritme dat wordt toegepast is een 'hill climber'
+Het eerste algoritme is het Nearest Neighbour algoritme die aan de hand van 
+de volgende constrains een lijnvoering maakt:
+- Startpunt = uithoeken. 
+- Als alle uithoeken geweest zijn: Kies de eerste station die nog niet geweest is
+in de lijst. 
+- Alle stations geweest? Kies eerste station wiens verbinding nog niet geweest is. 
+- Ga dan naar Nearest Neighbour.
+- Als station al genomen is: Kies spoor dat nog niet gereden is, meerdere sporen
+niet gereden? Kies nearest Neighbour. 
+- Alle sporen bereden? Kies nearest Neighbour. 
+- Als alleen terug weg mogelijk is? Kies terug weg. (terug weg is laatste keus).
+- Traject stopt bij 120 minuten. 
+
+Het tweede algoritme dat wordt toegepast is een 'hill climber':
+Verschil met Nearest Neighbour algoritme is het start punt: 
+- Eerst kiest het algoritme de uithoeken. 
+- Per te maken traject een random station. 
+- Bewaar de betere oplossing.
+- Itereer x aantal keer. 
+
+
 Het derde algoritme dat wordt toegepast is 'simulated annealing'. 
 
 
