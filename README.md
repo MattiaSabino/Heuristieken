@@ -8,7 +8,7 @@ Onder trajecten wordt een route van sporen en stations waarover treinen heen en
 weer rijden, verstaan.
 
 Aantal treinstations in Holland: 22, 
-aantal treinstations in Nederland: 118. 
+aantal treinstations in Nederland: 61. 
 
 Verder moet er in deze case rekening worden gehouden met 'kritieke stations', 
 met bijbehorende 'kritieke sporen'. Wanneer deze stations niet regelmatig worden 
