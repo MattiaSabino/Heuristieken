@@ -1,0 +1,79 @@
+START2 = ['Amsterdam Centraal']
+bram = Trein(START2, START2, ['Amsterdam Centraal'],0)
+
+
+# While loop gaat door tot traject is kleiner of gelijk dan 120.
+while (bram.tijdsduur < 120):
+
+
+    # Beste optie kiezen aan de hand van de mogelijkheden.
+    beste_optie = bram.opties(bram.eindstation[0])
+    # Trein verplaatsen naar volgend spoor.
+    bram.volgend_spoor(beste_optie[0])
+    # Huiding station updaten.
+    bram.actuele_station(beste_optie[0])
+    # Tijd updaten.
+    bram.tijd(beste_optie[1])
+
+# NIET VERWIJDEREN, BELANGRIJK VOOR ALS DE TRAJECTMAKER GOED WERKT   
+#Al is het traject hoger betekent dat er 1 loop te veel gedaan is, dus die moet eraf gehaald worden.
+
+if bram.tijdsduur > 120:
+    bram.verminderen(beste_optie)
+    bram.pop()
+    lengte = len(bram.traject) - 1
+    bram.actuele_station(bram.traject[lengte]) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+
+
+print "HOLLAAAA AT ME"
+print "BRAM: :"
+print
+print "traject: ", bram.traject
+print
+print "tijdsduur: ", bram.tijdsduur
+print "Beginstation: ", bram.beginstation
+print "Eindstation: ", bram.eindstation
+print "TRAJECTEN ALGEMEEN DEEEEL 2:: ", trajecten_algemeen
+
+
+
+
+print "HOLLAAAA AT ME"
+print "THOMAS: :"
+print
+print "traject: ", thomas.traject
+print
+print "tijdsduur: ", thomas.tijdsduur
+print "Beginstation: ", thomas.beginstation
+print "Eindstation: ", thomas.eindstation
+
+print
+print
+
+print "HOLLAAAA AT ME"
+print "BRAM: :"
+print
+print "traject: ", bram.traject
+print
+print "tijdsduur: ", bram.tijdsduur
+print "Beginstation: ", bram.beginstation
+print "Eindstation: ", bram.eindstation
+print "TRAJECTEN ALGEMEEN DEEEEL 2:: ", trajecten_algemeen
+

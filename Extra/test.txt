@@ -1,0 +1,249 @@
+
+            
+START3 = ["Delft"]
+START = ["Den Helder"]   
+START2 = ["Rotterdam Alexander"] 
+        
+# Trein initialiseren (beginpunt kiezen & tijd op nul zetten).        
+trajectthomas = START   
+thomas = Trein(trajectthomas, START, ["Den Helder"], 0)    
+
+
+
+trajectbram = START2
+bram = Trein(trajectbram, START2, ["Rotterdam Alexander"], 0)
+
+
+trajectravi = START3
+ravi = Trein(trajectravi, START3, ["Delft"], 0)
+
+
+
+# ZOEKEN NAAR BEGINPUNTEN (UITHOEKEN) MISSCHIEN 
+# AAN DE HAND VAN EEN LOOP MET DAARIN DE VOLGENDE FUNCTIE:::
+#print len(graph["Dordrecht"])
+
+
+
+
+
+# While loop gaat door tot traject is kleiner of gelijk dan 120.
+while (thomas.tijdsduur <= 120):
+
+    # Beste optie kiezen aan de hand van de mogelijkheden.
+    beste_optie = thomas.opties(thomas.eindstation[0])
+    # Trein verplaatsen naar volgend spoor.
+    thomas.volgend_spoor(beste_optie[0])
+    # Huiding station updaten.
+    thomas.actuele_station(beste_optie[0])
+    # Tijd updaten.
+    thomas.tijd(beste_optie[1])
+
+#Al is het traject hoger betekent dat er 1 loop te veel gedaan is, dus die moet eraf gehaald worden.
+if thomas.tijdsduur > 120:
+    thomas.verminderen(beste_optie)
+    thomas.pop()
+    lengte = len(thomas.traject) - 1
+    thomas.actuele_station(thomas.traject[lengte])
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+# While loop gaat door tot traject is kleiner of gelijk dan 120.
+while (bram.tijdsduur <= 120):
+
+    # Beste optie kiezen aan de hand van de mogelijkheden.
+    beste_optie = bram.opties(bram.eindstation[0])
+    # Trein verplaatsen naar volgend spoor.
+    bram.volgend_spoor(beste_optie[0])
+    # Huiding station updaten.
+    bram.actuele_station(beste_optie[0])
+    # Tijd updaten.
+    bram.tijd(beste_optie[1])
+
+#Al is het traject hoger betekent dat er 1 loop te veel gedaan is, dus die moet eraf gehaald worden.
+if bram.tijdsduur > 120:
+    bram.verminderen(beste_optie)
+    bram.pop()
+    lengte = len(bram.traject) - 1
+    bram.actuele_station(bram.traject[lengte]) 
+    
+
+ 
+# While loop gaat door tot traject is kleiner of gelijk dan 120.
+while (ravi.tijdsduur <= 120):
+
+    # Beste optie kiezen aan de hand van de mogelijkheden.
+    beste_optie = ravi.opties(ravi.eindstation[0])
+    # Trein verplaatsen naar volgend spoor.
+    ravi.volgend_spoor(beste_optie[0])
+    # Huiding station updaten.
+    ravi.actuele_station(beste_optie[0])
+    # Tijd updaten.
+    ravi.tijd(beste_optie[1])
+
+#Al is het traject hoger betekent dat er 1 loop te veel gedaan is, dus die moet eraf gehaald worden.
+if ravi.tijdsduur > 120:
+    ravi.verminderen(beste_optie)
+    ravi.pop()
+    lengte = len(ravi.traject) - 1
+    ravi.actuele_station(ravi.traject[lengte])     
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+
+print
+print
+print
+print "THOMAS: :"
+print
+print "traject: ", thomas.traject
+print "tijdsduur: ", thomas.tijdsduur
+print "Beginstation: ", thomas.beginstation
+print "Eindstation: ", thomas.eindstation
+print
+print
+print
+print "BRAM: :"
+print
+print "traject: ", bram.traject
+print "tijdsduur: ", bram.tijdsduur
+print "Beginstation: ", bram.beginstation
+print "Eindstation: ", bram.eindstation
+print
+print
+print
+print "RAVI: :"
+print
+print "traject: ", ravi.traject
+print "tijdsduur: ", ravi.tijdsduur
+print "Beginstation: ", ravi.beginstation
+print "Eindstation: ", ravi.eindstation
+
+
+
+        
+        
+        
+        
+        
+        
+    #def nieuw_station(self, nieuw_station):
+      #  self.stations.append(nieuw_station)
+        
+        
+        
+        
+        
+
+  
+
+
+  
+#mensenlijst = ['jan', 'harry']
+
+
+
+
+
+
+#volgend_station = []
+
+
+
+
+#nog_meer_mensen = ['mattia', 'paulien']
+
+
+#thomas.instappen(nog_meer_mensen)
+
+
+
+#thomas.waar_kan_ik_heen('Haarlem')
+
+#thomas.nieuw_station('Haarlem')
+
+
+#print(thomas.mensen)
+#print len(thomas.mensen)
+#print(thomas.stations)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+namen = ["Pau", "mat", "Thom"]
+
+for i in range(len(namen)):
+    x = namen[i]
+    
+    START = ["Den Helder"]
+    trajectx = START
+   
+    x = Trein(trajectx, START, ["Den Helder"], 0)
+    
+    
+    
+    while (x.tijdsduur <= 120):
+
+        # Beste optie kiezen aan de hand van de mogelijkheden.
+        beste_optie = x.opties(x.eindstation[0])
+        # Trein verplaatsen naar volgend spoor.
+        x.volgend_spoor(beste_optie[0])
+        # Huiding station updaten.
+        x.actuele_station(beste_optie[0])
+        # Tijd updaten.
+        x.tijd(beste_optie[1])
+
+    #Al is het traject hoger betekent dat er 1 loop te veel gedaan is, dus die moet eraf gehaald worden.
+    if x.tijdsduur > 120:
+        
+        x.verminderen(beste_optie)
+        x.pop()
+        lengte = len(x.traject) - 1
+        x.actuele_station(x.traject[lengte])
+        
+    print 
+    print
+    print
+    print
+    print x
+    print
+    print "traject: ", x.traject
+    print "tijdsduur: ", x.tijdsduur
+    print "Beginstation: ", x.beginstation
+    print "Eindstation: ", x.eindstation
