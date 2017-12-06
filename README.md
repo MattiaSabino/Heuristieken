@@ -78,38 +78,58 @@ voor heel Nederland:
 constrained optimalization problem (COP). Hierbij moet een zo goed mogelijke 
 oplossing worden gevonden. 
 
-Aangepaste score functie: s = p*10000 - (t*20 + min/10).
-Orginele score functie: s = p*10000 - (t*20 + min/100000)
+Aangepaste score functie: s = p*10000 - (t*20 + min/10000).
+Orginele score functie: s = p*10000 - (t*20 + min/100000).
 
 #### upperbound: 
-Uitkomsten van ons nearest neigbour algoritme.
+Uitkomsten van ons nearest neigbour algoritme:
 
 Holland:
-aangepaste formule:
+aangepaste score functie:
 S-Min = 1 * 10000 - ((6*20) + 672/10000) = 9879,93
 
-orginele formule:
+orginele score functie:
 S-Min = 1 * 10000 - ((6*20) + 672/100000) = 9879,99
 
 Heel Nederland:
-aangepaste formule: 
+aangepaste score functie: 
 S-Min = 24/28 * 10000 - ((5*20) + (566/10000) = 8471,37.
 
-orginele formule:
+orginele score functie:
 S-Min = 24/28 * 10000 - ((5*20) + (566/100000) = 8471,42.
 
 
 
 
 
-#### Lowerbound: Hoogst mogelijke score berekend met de score-functie waarbij alle trajecten en stations worden bereden.
+#### Lowerbound: Hoogst mogelijke score berekend met de score-functie waarbij 
+alle trajecten en stations worden bereden.
 
-min = 1551
-t = 1551/180 = 9
-s-Max = 1*10000 - (9 *20 + (1551/10)) = 9665.  
+Holland: 
+381) Aantal minuten samen gereden verbindingen in Holland.
+120) Max duur van traject. 
+381/120 = 3,175
+Theoretische lowerbouwnd) 4 treinen die totaal 381 minuten rijden. 
 
-orginele formule: 
-s-Max = 1*10000 - (9*20 + (1551/100000)) = 9820. 
+Aangepaste score functie:
+s-Max = 1*10000 -(4*20 + 381/10000) = 9919.9619
+
+Orginele formule: 
+s-Max = 1*10000 - (4*20 + (381/100000)) = 9919.99619 
+
+
+Heel Nederland:
+1551) Aantal minuten samen gereden verbindingen in heel Nederland.
+180) Max duur van traject.
+
+1551/180 = 8.6.
+Theoretische lowerbound) 9 treinen die in totaal 1551 minuten rijden.
+
+Aangepaste formule:
+s-Max = 1*10000 - ((9*20) + (1551/10000)) = 9819.8449. 
+
+Orginele formule: 
+s-Max = 1*10000 - ((9*20) + (1551/100000)) = 9819.98449.
 
 bron: http://www.thechalkface.net/resources/Travelling_Salesman_England.pdf 
 
