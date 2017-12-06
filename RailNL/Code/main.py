@@ -13,17 +13,18 @@ start_time = time.clock()
 HILL = 20000
 
 # AANTAL MINUTEN
-MAX = 120
+MAX = 180
 
 # AANTAL TRAJECTEN
-RANGE = 1
+RANGE = 8
 
 # TOTAAL AANTAL VERBINDINGEN
-TOTAAL_SPOREN = 28
+TOTAAL_SPOREN = 89
 #89
+#29
 
-STATIONS = 'Data/StationsHolland.csv'
-VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
+STATIONS = 'Data/StationsNationaal.csv'
+VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
 
 
 
