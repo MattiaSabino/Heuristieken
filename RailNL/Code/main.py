@@ -10,19 +10,20 @@ import time
 start_time = time.clock()
 
 # AANTAL ITERATIES VAN DE HILLCLIMBER
-HILL = 10000
+HILL = 1000
 
 # AANTAL MINUTEN
-MAX = 180
+MAX = 120
 
 # AANTAL TRAJECTEN
 RANGE = 3
 
 # TOTAAL AANTAL VERBINDINGEN
-TOTAAL_SPOREN = 89
+TOTAAL_SPOREN = 28
+#89
 
-STATIONS = 'Data/StationsNationaal.csv'
-VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
+STATIONS = 'Data/StationsHolland.csv'
+VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
 
 
 
@@ -53,6 +54,7 @@ alle_tijdsduur = resultaat[1]
 alle_trajecten = resultaat[2]
 sporen = resultaat[3]
 trajecten_algemeen = resultaat[4]
+totale_tijdsduur = (minuten.minuten(alle_tijdsduur))
 
 print("TRAJECTEN::")
 for i in range (len(alle_trajecten)):
@@ -65,13 +67,15 @@ print()
 print("SCORE WAS::", score_oud)
 print("AANTAL SPOREN WAS::", len(sporen_oud))
 print("AANTAL STATIONS WAS::", len(trajecten_algemeen_oud))
+print("TOTAAL AANTAL MINUTEN WAS::", totale_tijdsduur_oud)
 print()
 
 print()
 print("SCORE :::", score)
 print("AANTAL SPOREN:: ", len(sporen))
 print("AANTAL STATIONS:: ", len(trajecten_algemeen))
-
+print("TOTAAL AANTAL MINUTEN::", totale_tijdsduur)
+print()
 print(time.clock() - start_time, "seconds")
 
 
