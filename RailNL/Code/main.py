@@ -11,23 +11,22 @@ import functies.minuten
 import algo.hillclimber
 import inladen.inladen
 import time
-#import visualisatie.lijnvoeringtest
+import visualisatie.lijnvoeringtest
 
 # Hou de tijd bij. 
 start_time = time.clock()
 
 # AANTAL ITERATIES VAN DE HILLCLIMBER
-<<<<<<< HEAD
-HILL = 100
-=======
-HILL = 40000
->>>>>>> e3ad28dd6236e383dfcd9a7f5f95ee540e7210a1
+
+
+HILL = 120000
+
 
 # AANTAL MINUTEN
 MAX = 180
 
 # AANTAL TRAJECTEN
-RANGE = 4
+RANGE = 11
  
 # Te gebruiken CSV's. 
 STATIONS = 'Data/StationsNationaal.csv'
