@@ -1,83 +1,65 @@
-## 
 #Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
 #Vak: Heuristieken. 
 #Case: Rail NL. 
 #
 #Dit is het main bestand. Run dit bestand door middel van main.py.
 #
-##
 
-# scorefunctie tot. sporen aanpassen!
-import scorefunctie
-import trajectmaker
-import minuten
-import hillclimber
-import inladen
+import functies.scorefunctie
+import algo.trajectmaker
+import functies.minuten
+import algo.hillclimber
+import inladen.inladen
 import time
 
 # Hou de tijd bij. 
 start_time = time.clock()
 
-<<<<<<< HEAD
 # AANTAL ITERATIES VAN DE HILLCLIMBER
-HILL = 30000
+HILL = 300
 
 # AANTAL MINUTEN
 MAX = 120
 
 # AANTAL TRAJECTEN
 RANGE = 4
-
-#TE GEBRUIKEN CSV'S
-STATIONS = 'Data/StationsHolland.csv'
-VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
-=======
-# Aantal iteraties van de hillclimber.
-HILL = 20000
-
-# Zet op maximaal aantal minuten.
-MAX = 180
-
-# Zet op maximaal aantal minuten.
-RANGE = 8
-
+ 
 # Te gebruiken CSV's. 
 STATIONS = 'Data/StationsNationaal.csv'
 VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
->>>>>>> 7e26b487fb3d58c7c341a48b71afb8ae907c82bc
 
 # Pak de gebruikte lists.
-stations = inladen.stations(STATIONS)
+stations = inladen.inladen.stations(STATIONS)
 TOTAAL_STATIONS = len(stations)
 
 # Laad de verbindingen in. 
-verbindingen = inladen.verbindingen(VERBINDINGEN)
+verbindingen = inladen.inladen.verbindingen(VERBINDINGEN)
 
 # Pak het totaal aantal sporen. 
 TOTAAL_SPOREN = len(verbindingen)
 
 # Pak alle sporen. 
-alle_sporen = inladen.alle_sporen(stations, verbindingen)
+alle_sporen = inladen.inladen.alle_sporen(stations, verbindingen)
 
 # Laad graph in. 
-graph = inladen.graph(stations, alle_sporen)
+graph = inladen.inladen.graph(stations, alle_sporen)
 
 # Pak alle uithoeken. 
-uithoeken = inladen.uithoeken(graph, stations)
+uithoeken = inladen.inladen.uithoeken(graph, stations)
 
 # Maak de eerste oplossing en indelen. 
-trajecten = trajectmaker.traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS)
+trajecten = algo.trajectmaker.traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS)
 alle_tijdsduur_oud = trajecten[0]
 alle_trajecten_oud = trajecten[1]
 sporen_oud = trajecten[2]
 trajecten_algemeen_oud = trajecten[3]
 
 # Bereken de score.
-totale_tijdsduur_oud = minuten.minuten(alle_tijdsduur_oud)
-score_oud = scorefunctie.score(alle_trajecten_oud, totale_tijdsduur_oud, sporen_oud, TOTAAL_SPOREN)
+totale_tijdsduur_oud = functies.minuten.minuten(alle_tijdsduur_oud)
+score_oud = functies.scorefunctie.score(alle_trajecten_oud, totale_tijdsduur_oud, sporen_oud, TOTAAL_SPOREN)
 
 # Pas de hillclimber toe.
-resultaat = hillclimber.hillclimber(score_oud, alle_trajecten_oud, alle_tijdsduur_oud, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen_oud, sporen_oud, TOTAAL_SPOREN, TOTAAL_STATIONS)
+resultaat = algo.hillclimber.hillclimber(score_oud, alle_trajecten_oud, alle_tijdsduur_oud, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen_oud, sporen_oud, TOTAAL_SPOREN, TOTAAL_STATIONS)
 
 # Hill climber returnd 4 gegevens. Deze worden weer opgehaald. 
 score = resultaat[0]
@@ -85,7 +67,7 @@ alle_tijdsduur = resultaat[1]
 alle_trajecten = resultaat[2]
 sporen = resultaat[3]
 trajecten_algemeen = resultaat[4]
-totale_tijdsduur = (minuten.minuten(alle_tijdsduur))
+totale_tijdsduur = (functies.minuten.minuten(alle_tijdsduur))
 
 
 # Deze print statements nog verwijderen. 

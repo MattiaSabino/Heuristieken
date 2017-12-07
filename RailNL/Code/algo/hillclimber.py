@@ -1,7 +1,7 @@
-import start
-import functies
-import scorefunctie
-import minuten
+import algo.start
+import functies.functies
+import functies.scorefunctie
+import functies.minuten
 
 
 def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen1, sporen1, TOTAAL_SPOREN, TOTAAL_STATIONS):
@@ -18,9 +18,9 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
         
         for i in range (RANGE):
 
-            START = start.kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+            START = algo.start.kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
             z = START
-            trein = functies.Trein([START], [START], [z], 0)    
+            trein = functies.functies.Trein([START], [START], [z], 0)    
 
             # While loop gaat door tot traject is kleiner of gelijk dan 120.
             while (trein.tijdsduur < MAX):
@@ -52,8 +52,8 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
             alle_trajecten.append(trein.traject)
             alle_tijdsduur.append(trein.tijdsduur)
         
-        totale_tijdsduur = minuten.minuten(alle_tijdsduur)
-        score2 = scorefunctie.score(alle_trajecten, totale_tijdsduur, sporen, TOTAAL_SPOREN)
+        totale_tijdsduur = functies.minuten.minuten(alle_tijdsduur)
+        score2 = functies.scorefunctie.score(alle_trajecten, totale_tijdsduur, sporen, TOTAAL_SPOREN)
         
         if len(trajecten_algemeen) == len(stations):
             if score2 > score1:
