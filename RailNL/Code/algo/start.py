@@ -58,6 +58,16 @@ def kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations):
     if not plek in trajecten_algemeen:
         trajecten_algemeen.append(z)
     return z
+    
+def kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations):
+        
 
+    i = randint(0, len(stations) -1)
+    plek = stations[i]['Station']
+    z = plek
+    if not plek in trajecten_algemeen:
+        trajecten_algemeen.append(z)
+    return z
+    
     
 
