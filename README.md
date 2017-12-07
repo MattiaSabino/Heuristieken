@@ -1,5 +1,11 @@
 # Rail NL 
 
+De map heuristieken bevat 3 mappen:
+- Psuedocodes: In deze map staan de pseudocodes voor de gebruikte algoritmes.
+- RailNL: In deze map staat een nieuwe map met code, verschillende manieren van
+het data inladen is hierin te vinden en de resulaten van de algoritmes.
+- Visualisaties: In deze map staan de visualisaties van RAIL NL. 
+
 De case Rail NL gaat over het maken van de lijnvoering van intercity treinen in 
 Nederland. De case is opgesplitst in twee delen. Allereerst wordt gekeken naar 
 de lijnvoering voor Holland, om dit vervolgens uit te breiden naar de lijnvoering 
@@ -22,16 +28,6 @@ s = score voor de lijnvoering.
 p = percentage van de bereden kritieke verbindingen. 
 t= aantal treinen. 
 min = totaal door alle treinen samen gereden minuten in de lijnvoering.
-
-Aangezien 'min' door een heel groot getal gedeeld wordt, is er nauwelijks een 
-verandering in de score functie wanneer 'min' veranderd. Vandaar dat we de keuze 
-hebben gemaakt 'min' door een kleiner getal te delen, zodat het aantal minuten 
-een relevantere rol speelt, in de score functie wanneer 'min' veranderd. Wij 
-denken dat dit belangrijk is omdat de trajecttijd ook indiceert of het een goed
-traject is of niet. 
-
-Aangepaste score functie: 
-s = p*10000 - (t*20 + min/10000)
 
 constrains deel 1 - Lijnvoering voor Holland:
 1. Tijdsframe van trajecten: maximaal 2 uur. 
@@ -63,72 +59,9 @@ Deze case is gemaakt met behulp van Python 3.6.
 #### Runnen:
 python main.py
 
-### Toetsingsgrootheid
-
-De toetsingsgrootheid= gemiddelde aantal sporen per station ^(aantal stations), 
-in dit geval: 
-
-voor Holland:
-2,54 ^ 22 = 806012478.
-
-voor heel Nederland:
-2,92 ^ 61 = 1,98 *(10 ^ 28). 
-
 ### Probleem type
 constrained optimalization problem (COP). Hierbij moet een zo goed mogelijke 
 oplossing worden gevonden. 
-
-Aangepaste score functie: s = p*10000 - (t*20 + min/10000).
-Orginele score functie: s = p*10000 - (t*20 + min/100000).
-
-#### upperbound: 
-Uitkomsten van ons nearest neigbour algoritme:
-
-Holland:
-aangepaste score functie:
-S-Min = 1 * 10000 - ((6*20) + 672/10000) = 9879,9328
-
-orginele score functie:
-S-Min = 1 * 10000 - ((6*20) + 672/100000) = 9879,99382
-
-Heel Nederland:
-aangepaste score functie: 
-S-Min = 1 * 10000 - ((14*20) + (2398/10000)) = 9719.7602.
-
-orginele score functie:
-S-Min = 1 * 10000 - ((14*20) + (2398/100000)) = 9719.97602.
-
-
-#### Lowerbound: Hoogst mogelijke score berekend met de score-functie waarbij 
-alle trajecten en stations worden bereden.
-
-Holland: 
-381) Aantal minuten samen gereden verbindingen in Holland.
-120) Max duur van traject. 
-381/120 = 3,175
-Theoretische lowerbouwnd) 4 treinen die totaal 381 minuten rijden. 
-
-Aangepaste score functie:
-s-Max = 1*10000 -(4*20 + 381/10000) = 9919.9619
-
-Orginele formule: 
-s-Max = 1*10000 - (4*20 + (381/100000)) = 9919.99619 
-
-
-Heel Nederland:
-1551) Aantal minuten samen gereden verbindingen in heel Nederland.
-180) Max duur van traject.
-
-1551/180 = 8.6.
-Theoretische lowerbound) 9 treinen die in totaal 1551 minuten rijden.
-
-Aangepaste formule:
-s-Max = 1*10000 - ((9*20) + (1551/10000)) = 9819.8449. 
-
-Orginele formule: 
-s-Max = 1*10000 - ((9*20) + (1551/100000)) = 9819.98449.
-
-bron: http://www.thechalkface.net/resources/Travelling_Salesman_England.pdf 
 
 ### Algoritmes
 
