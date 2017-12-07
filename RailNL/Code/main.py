@@ -10,17 +10,17 @@ import time
 start_time = time.clock()
 
 # AANTAL ITERATIES VAN DE HILLCLIMBER
-HILL = 150000
+HILL = 30000
 
 # AANTAL MINUTEN
-MAX = 180
+MAX = 120
 
 # AANTAL TRAJECTEN
-RANGE = 11
+RANGE = 4
 
 #TE GEBRUIKEN CSV'S
-STATIONS = 'Data/StationsNationaal.csv'
-VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
+STATIONS = 'Data/StationsHolland.csv'
+VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
 
 
 #MAKEN VAN DE TE GEBRUIKEN LISTS
