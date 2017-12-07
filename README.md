@@ -6,6 +6,12 @@ De map heuristieken bevat 3 mappen:
 het data inladen is hierin te vinden en de resulaten van de algoritmes.
 - Visualisaties: In deze map staan de visualisaties van RAIL NL. 
 
+De map heuristieken bevat ook het document: achtergrond informatie. 
+Dit document bevat:
+- aangepaste score functie
+- upper/lowerbound
+- toetsingsgrootheid
+
 De case Rail NL gaat over het maken van de lijnvoering van intercity treinen in 
 Nederland. De case is opgesplitst in twee delen. Allereerst wordt gekeken naar 
 de lijnvoering voor Holland, om dit vervolgens uit te breiden naar de lijnvoering 
