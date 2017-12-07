@@ -63,7 +63,8 @@ orginele score functie:
 S-Min = 1 * 10000 - ((14*20) + (2398/100000)) = 9719.97602.
 
 
-#### Lowerbound: Hoogst mogelijke score berekend met de score-functie waarbij 
+#### Lowerbound:
+Hoogst mogelijke score berekend met de score-functie waarbij 
 alle trajecten en stations worden bereden. De lowerbound hebben we berekend 
 aan de hand van de aangepaste score functie en de orginele score functie. 
 
