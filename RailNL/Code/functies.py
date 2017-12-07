@@ -1,3 +1,13 @@
+## 
+#Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
+#Vak: Heuristieken. 
+#Case: Rail NL. 
+#
+#In dit bestand staan de functies van Rail NL. 
+#
+#
+##
+
 # Class Trein aanmaken.    
 class Trein(object):
 
@@ -31,7 +41,7 @@ class Trein(object):
         if not verbinding1 in sporen and not verbinding2 in sporen:
             sporen.append(verbinding1)
         
-            
+         
     # Deze functie maakt de beslissing welk spoor er wordt genomen.  
     def opties(self, sporen, graph, trajecten_algemeen, huidig_station):
     

@@ -1,3 +1,13 @@
+## 
+#Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
+#Vak: Heuristieken. 
+#Case: Rail NL. 
+#
+#Dit is het main bestand. Run dit bestand door middel van main.py.
+#
+##
+
+
 # STAAT ALLEMAAL  NU OP NATIONAAL
 # scorefunctie tot. sporen aanpassen!
 import scorefunctie
@@ -7,26 +17,25 @@ import hillclimber
 import inladen
 import time
 
+# Hou de tijd bij. 
 start_time = time.clock()
 
-# AANTAL ITERATIES VAN DE HILLCLIMBER
+# Aantal iteraties van de hillclimber.
 HILL = 20000
 
-# AANTAL MINUTEN
+# Zet op maximaal aantal minuten.
 MAX = 180
 
-# AANTAL TRAJECTEN
+# Zet op maximaal aantal minuten.
 RANGE = 8
 
-# TOTAAL AANTAL VERBINDINGEN
+# Totaal aantal sporen.
 TOTAAL_SPOREN = 89
 #89
 #29
 
 STATIONS = 'Data/StationsNationaal.csv'
 VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
-
-
 
 
 #MAKEN VAN DE TE GEBRUIKEN LISTS
