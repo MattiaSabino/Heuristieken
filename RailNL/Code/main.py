@@ -10,34 +10,32 @@ import time
 start_time = time.clock()
 
 # AANTAL ITERATIES VAN DE HILLCLIMBER
-HILL = 20000
+HILL = 150000
 
 # AANTAL MINUTEN
 MAX = 180
 
 # AANTAL TRAJECTEN
-RANGE = 8
+RANGE = 11
 
-# TOTAAL AANTAL VERBINDINGEN
-TOTAAL_SPOREN = 89
-#89
-#29
-
+#TE GEBRUIKEN CSV'S
 STATIONS = 'Data/StationsNationaal.csv'
 VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
 
 
-
-
 #MAKEN VAN DE TE GEBRUIKEN LISTS
 stations = inladen.stations(STATIONS)
+TOTAAL_STATIONS = len(stations)
+
 verbindingen = inladen.verbindingen(VERBINDINGEN)
+TOTAAL_SPOREN = len(verbindingen)
+
 alle_sporen = inladen.alle_sporen(stations, verbindingen)
 graph = inladen.graph(stations, alle_sporen)
 uithoeken = inladen.uithoeken(graph, stations)
 
 #MAKEN VAN DE EERSTE OPLOSSING EN DIE INDELEN
-trajecten = trajectmaker.traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph)
+trajecten = trajectmaker.traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS)
 alle_tijdsduur_oud = trajecten[0]
 alle_trajecten_oud = trajecten[1]
 sporen_oud = trajecten[2]
@@ -48,7 +46,7 @@ totale_tijdsduur_oud = minuten.minuten(alle_tijdsduur_oud)
 score_oud = scorefunctie.score(alle_trajecten_oud, totale_tijdsduur_oud, sporen_oud, TOTAAL_SPOREN)
 
 #HILLCLIMBER TOEPASSEN
-resultaat = hillclimber.hillclimber(score_oud, alle_trajecten_oud, alle_tijdsduur_oud, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen_oud, sporen_oud, TOTAAL_SPOREN)
+resultaat = hillclimber.hillclimber(score_oud, alle_trajecten_oud, alle_tijdsduur_oud, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen_oud, sporen_oud, TOTAAL_SPOREN, TOTAAL_STATIONS)
 
 score = resultaat[0]
 alle_tijdsduur = resultaat[1]
