@@ -61,7 +61,10 @@ def visualisatie(x, STATIONS, VERBINDINGEN):
             verbinding2x = float(xcoordinates[counter2])
             verbinding2y = float(ycoordinates[counter2])
 
+            plt.plot([verbinding1y,verbinding2y],[verbinding1x,verbinding2x], marker = 'o', color = '0.9')
 
+            plt.xticks([])
+            plt.yticks([])
             # Ga door de lijst met alle trajecten.
             for i in range(0, len(x)):
                 
@@ -86,10 +89,7 @@ def visualisatie(x, STATIONS, VERBINDINGEN):
                 
 
 
-                plt.plot([verbinding1y,verbinding2y],[verbinding1x,verbinding2x], marker = 'o', color = '0.8')
-
-                plt.xticks([])
-                plt.yticks([])
+            
 
     # Weergeef een aantal plaatsnamen om overzicht te krijgen.			
     plt.text(4.5,53, "Den Helder")

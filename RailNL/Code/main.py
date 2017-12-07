@@ -17,13 +17,13 @@ import visualisatie.lijnvoeringtest
 start_time = time.clock()
 
 # AANTAL ITERATIES VAN DE HILLCLIMBER
-HILL = 20
+HILL = 100
 
 # AANTAL MINUTEN
 MAX = 180
 
 # AANTAL TRAJECTEN
-RANGE = 11
+RANGE = 4
  
 # Te gebruiken CSV's. 
 STATIONS = 'Data/StationsNationaal.csv'
@@ -98,7 +98,7 @@ print(time.clock() - start_time, "seconds")
 
 start_time = time.clock()
 
-#visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
+visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
 
 print(time.clock() - start_time, "seconds")
 
