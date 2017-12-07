@@ -7,8 +7,6 @@
 #
 ##
 
-
-# STAAT ALLEMAAL  NU OP NATIONAAL
 # scorefunctie tot. sporen aanpassen!
 import scorefunctie
 import trajectmaker
@@ -29,36 +27,44 @@ MAX = 180
 # Zet op maximaal aantal minuten.
 RANGE = 8
 
-# Totaal aantal sporen.
-TOTAAL_SPOREN = 89
-#89
-#29
-
+# Te gebruiken CSV's. 
 STATIONS = 'Data/StationsNationaal.csv'
 VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
 
-
-#MAKEN VAN DE TE GEBRUIKEN LISTS
+# Pak de gebruikte lists.
 stations = inladen.stations(STATIONS)
+TOTAAL_STATIONS = len(stations)
+
+# Laad de verbindingen in. 
 verbindingen = inladen.verbindingen(VERBINDINGEN)
+
+# Pak het totaal aantal sporen. 
+TOTAAL_SPOREN = len(verbindingen)
+
+# Pak alle sporen. 
 alle_sporen = inladen.alle_sporen(stations, verbindingen)
+
+# Laad graph in. 
 graph = inladen.graph(stations, alle_sporen)
+
+# Pak alle uithoeken. 
 uithoeken = inladen.uithoeken(graph, stations)
 
-#MAKEN VAN DE EERSTE OPLOSSING EN DIE INDELEN
-trajecten = trajectmaker.traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph)
+# Maak de eerste oplossing en indelen. 
+trajecten = trajectmaker.traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS)
 alle_tijdsduur_oud = trajecten[0]
 alle_trajecten_oud = trajecten[1]
 sporen_oud = trajecten[2]
 trajecten_algemeen_oud = trajecten[3]
 
-# SCORE UITREKENEN
+# Bereken de score.
 totale_tijdsduur_oud = minuten.minuten(alle_tijdsduur_oud)
 score_oud = scorefunctie.score(alle_trajecten_oud, totale_tijdsduur_oud, sporen_oud, TOTAAL_SPOREN)
 
-#HILLCLIMBER TOEPASSEN
-resultaat = hillclimber.hillclimber(score_oud, alle_trajecten_oud, alle_tijdsduur_oud, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen_oud, sporen_oud, TOTAAL_SPOREN)
+# Pas de hillclimber toe.
+resultaat = hillclimber.hillclimber(score_oud, alle_trajecten_oud, alle_tijdsduur_oud, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen_oud, sporen_oud, TOTAAL_SPOREN, TOTAAL_STATIONS)
 
+# Hill climber returnd 4 gegevens. Deze worden weer opgehaald. 
 score = resultaat[0]
 alle_tijdsduur = resultaat[1]
 alle_trajecten = resultaat[2]
@@ -66,7 +72,9 @@ sporen = resultaat[3]
 trajecten_algemeen = resultaat[4]
 totale_tijdsduur = (minuten.minuten(alle_tijdsduur))
 
-print("TRAJECTEN::")
+
+# Deze print statements nog verwijderen. 
+print("TRAJECTEN:")
 for i in range (len(alle_trajecten)):
     print()
     print("TRAJECT", i)

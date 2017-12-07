@@ -1,7 +1,7 @@
 import functies
 import start
 
-def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph):
+def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS):
 
     alle_trajecten = []
     trajecten_algemeen =[] 
@@ -18,17 +18,21 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph):
 
         # While loop gaat door tot traject is kleiner of gelijk dan 120.
         while (trein.tijdsduur < MAX):
+        
+            if len(sporen) == TOTAAL_SPOREN and len(trajecten_algemeen) == TOTAAL_STATIONS:
+                break
 
-            # Beste optie kiezen aan de hand van de mogelijkheden.
-            beste_optie = trein.opties(sporen, graph, trajecten_algemeen, trein.eindstation[0])
-            #Spoor toevoegen.
-            trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)
-            # Trein verplaatsen naar volgend spoor.
-            trein.volgend_spoor(beste_optie[0])
-            # Huiding station updaten.
-            trein.actuele_station(beste_optie[0])
-            # Tijd updaten.
-            trein.tijd(beste_optie[1])
+            else:
+                # Beste optie kiezen aan de hand van de mogelijkheden.
+                beste_optie = trein.opties(sporen, graph, trajecten_algemeen, trein.eindstation[0])
+                #Spoor toevoegen.
+                trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)
+                # Trein verplaatsen naar volgend spoor.
+                trein.volgend_spoor(beste_optie[0])
+                # Huiding station updaten.
+                trein.actuele_station(beste_optie[0])
+                # Tijd updaten.
+                trein.tijd(beste_optie[1])
 
 
         if trein.tijdsduur > MAX:
