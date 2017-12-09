@@ -41,6 +41,23 @@ class Trein(object):
         if not verbinding1 in sporen and not verbinding2 in sporen:
             sporen.append(verbinding1)
         
+        
+    # Random kiezen, nog te maken!
+    def opties1(self, sporen, graph, trajecten_algemeen, huidig_station):
+    
+        richtingen = graph[huidig_station]
+        for row in stations_niet_aangetikt: 
+            if int(row[1][0]) <= beste_tijd:
+                beste_tijd = int(row[1][0])
+                beste_station = row[0][0] 
+
+    
+        # Voeg best gekozen station toe aan trajecten.     
+        trajecten_algemeen.append(beste_station)
+        return beste_station, beste_tijd
+                
+        
+        print(richtingen)
          
     # Deze functie maakt de beslissing welk spoor er wordt genomen.  
     def opties(self, sporen, graph, trajecten_algemeen, huidig_station):
