@@ -69,6 +69,11 @@ python main.py
 Constrained optimalization problem (COP). Hierbij moet een zo goed mogelijke 
 oplossing worden gevonden. 
 
+### Resultaten tot nu toe
+
+Upperbound Holland = 9919,9619 Onze score = 9919,9604
+Upperbound Nederland = 9819, 8449 Onze score = 9779, 8088
+
 
 ## Auteurs
 Paulien Tensen, Matia Caso & Thomas van Dooren. 
