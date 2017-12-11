@@ -99,7 +99,6 @@ def graph(stations, alle_sporen):
     return graph
     
     
-    
 def uithoeken(graph, stations):
 
     # Zoek naar de uithoeken van de kaart.     
