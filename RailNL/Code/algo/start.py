@@ -3,17 +3,9 @@
 #Vak: Heuristieken. 
 #Case: Rail NL. 
 #
-#In dit bestand staan de functies van Rail NL. 
-#
+# 
+#Deze functie bepaald het begin station waar een trein begint.  
 ## 
-#Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
-#Vak: Heuristieken. 
-#Case: Rail NL. 
-#
-#In dit bestand wordt besloten waar een traject begint.  
-#
-#
-##
 
 from random import randint
 
