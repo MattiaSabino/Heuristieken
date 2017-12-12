@@ -13,10 +13,9 @@ def kies_start(sporen, verbindingen, uithoeken, trajecten_algemeen, stations):
     
     Het start punt wordt bepaald door: 
     1. Start vanuit de uithoeken. 
-    2. Wanneer al in de uithoeken is begonnen
-    begin bij een onbereden station. 
-    3. Wanneer de stations allemaal zijn bereden, 
-    begin bij een station met een onbereden spoor. 
+    2. Wanneer al in de uithoeken is begonnen begin bij een onbereden station. 
+    3. Wanneer de stations allemaal zijn bereden, begin bij een station met een 
+    onbereden spoor. 
     
     De functie returned het station waar op wordt 'gestart' (z). 
     """
@@ -81,13 +80,6 @@ def kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations):
             trajecten_algemeen.append(z)
 
             return z
-            
-   # for i in range (b):
-     #   plek = stations[i]['Station']
-       # if not plek in trajecten_algemeen:
-         #   z = plek
-           # trajecten_algemeen.append(z)
-            #return z
     
     # Wanneer op alle uithoeken is begonnen, begin dan random. 
     i = randint(0, len(stations) -1)
