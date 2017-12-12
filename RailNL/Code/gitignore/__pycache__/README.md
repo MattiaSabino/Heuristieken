@@ -1,3 +1,0 @@
-# Pycache
-
-Alle geimporteerde bestanden.
