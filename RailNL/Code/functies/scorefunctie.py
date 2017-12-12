@@ -2,7 +2,7 @@
 # Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
 # Case: Rail NL
 #
-#In deze functie berekend de kwaliteit van de lijnvoering d.m.v. scorefunctie.
+# Berekenen van de kwaliteit van de lijnvoering d.m.v. scorefunctie.
 #
 
 def score(alle_trajecten, totale_tijdsduur, sporen, totaal_sporen):

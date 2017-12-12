@@ -2,7 +2,7 @@
 # Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
 # Case: Rail NL
 #
-#In dit bestand wordt de start bepaald per traject. 
+# In dit bestand wordt de start bepaald per traject. 
 #
 
 from random import randint
