@@ -1,3 +1,13 @@
+## 
+#Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
+#Vak: Heuristieken. 
+#Case: Rail NL. 
+#
+#In dit bestand staan de functies van Rail NL. 
+#
+## 
+
+
 import algo.start
 import functies.functies
 import functies.scorefunctie
@@ -18,7 +28,7 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
         
         for i in range (RANGE):
 
-            START = algo.start.kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+            START = algo.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
             z = START
             trein = functies.functies.Trein([START], [START], [z], 0)    
 
@@ -41,7 +51,7 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
                     # Tijd updaten.
                     trein.tijd(beste_optie[1])
 
-
+            # Als tijdsduur langer is dan de MAX. 
             if trein.tijdsduur > MAX:
                 trein.verminderen(beste_optie)
                 trein.pop(trajecten_algemeen, sporen)

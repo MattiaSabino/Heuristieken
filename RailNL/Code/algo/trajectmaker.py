@@ -1,8 +1,19 @@
+## 
+#Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
+#Vak: Heuristieken. 
+#Case: Rail NL. 
+#
+#In dit bestand staan de functies van Rail NL. 
+#
+## 
+
 import functies.functies
 import algo.start
 
+# Deze functie bepaald het traject. 
 def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS):
 
+    # Lege lijsten om de gemaakte trajecten in op te slaan. 
     alle_trajecten = []
     trajecten_algemeen =[] 
     sporen = [] 

@@ -1,71 +1,69 @@
-## 
-#Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
-#Vak: Heuristieken. 
-#Case: Rail NL. 
+# Course: Huristieken
+# Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
+# Case: Rail NL
 #
-#In dit bestand openen we de csv bestanden van stations en verbindingen en laden
-#deze in. 
+# In dit bestand openen we de csv bestanden van de station en verbindingen en 
+# laden deze csv bestanden in.
 #
-##
 
 import csv
 
 def stations(x):
+    """"
+    Deze functie returned een lijst met alle stations, x/y coördinaten en of een 
+    station kritiek is.
+    """
 
-    # Maak een lijst met alle stations, x/y coördinaten en of station kritiek is. 
     stations = []
     with open (x) as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             stations.append(row)
     
-    # Return lijst met stations.
     return stations
      
      
 def verbindingen(y):
+    """"
+    Deze functie returned een lijst met mogelijke verbindingen tussen stations, 
+    en de tijd hoelang de verbinding er over doet.
+    """
 
-    # Maak een lijst met alle verbindingen en de hoelang deze verbinding duurt.
     verbindingen = []
     with open(y) as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             verbindingen.append(row)
     
-    # Return een lijst met verbindingen en tijd. 
     return verbindingen
 
 
 def alle_sporen(stations, verbindingen):
-
-    # Maak een lijst met alle sporen. 
+    """ 
+    Deze functie returned een lijst (alle_sporen) met alle stations, bijbehorende 
+    verbindingen en hoelang de verbindigen er over doen.
+    """
+    
     b = len(stations)
     a = len(verbindingen)
     alle_sporen = []
-    
-    # Loop door de stations.  
-    for i in range (b):  
-       
-       # Maak een lege lijst met sporen. 
+     
+    for i in range (b):        
         sporen = [] 
         
-        # Loop door de verbindingen.
         for z in range (a):
-            
             stat = []
             tijd = []
             
             # Als je de verbinding van een station hebt gevonden voeg deze toe
-            # aan lijst met stat. 
+            # aan lijst stat. 
             if stations[i]['Station'] == verbindingen[z]['Station1']: 
                 stat.append(verbindingen[z]['Station2'])
                 
-                # Voeg de tijd van de verbinding toe aan tijd.
+                # Voeg de duur van de verbinding toe aan tijd, en station met 
+                # tijd toe aan sporen.
                 tijd.append(verbindingen[z]['Tijd'])
                 u = stat, tijd 
-
-                # Voeg de verbinding met station en bijbehorende tijd toe aan 
-                # sporen.
                 sporen.append(u)
             
             if stations[i]['Station'] == verbindingen[z]['Station2']:
@@ -76,14 +74,16 @@ def alle_sporen(stations, verbindingen):
                 sporen.append(u)
        
         alle_sporen.append(sporen)
-    
-    # Return lijst met alle sporen. 
-    return alle_sporen
+     
+    return alle_sporen 
       
       
 def graph(stations, alle_sporen):
+    """ 
+    Deze functie returned een dict (graph) met daarin alle stations en 
+    sporen.
+    """
     
-    # Maak lege dict.
     graph = {}
     b = len(stations)
     
@@ -95,21 +95,21 @@ def graph(stations, alle_sporen):
         y = {x:g}
         graph.update(y)
     
-    # Return de dict. 
     return graph
     
     
-    
 def uithoeken(graph, stations):
-
-    # Zoek naar de uithoeken van de kaart.     
+    """
+    Deze functie returned een lijst (uithoeken) met alle uithoeken van Nederland 
+    en Holland. Deze kunnen worden gebruikt als start station. 
+    """
+   
     uithoeken =[] 
     
     # Stel uithoek gelijk aan 2.
     geen_uithoek = 2   
     b = len(stations)
     
-    # Loop door de stations.
     for i in range (b):
         x = stations[i]['Station']
         connecties = len(graph[x])
@@ -117,8 +117,7 @@ def uithoeken(graph, stations):
         # Als de stations een uithoek is, append aan uithoeken. 
         if connecties < geen_uithoek:
             uithoeken.append(x)
-      
-    # Return een lijst met uithoeken.     
+           
     return uithoeken
     
     
