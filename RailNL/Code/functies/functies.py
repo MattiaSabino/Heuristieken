@@ -81,8 +81,6 @@ class Trein(object):
         bereden is kies onbereden station. Als alle stations bereden zijn kies
         station met onbereden sporen. Als alle stations bereden zijn en alle
         sporen, ga terug als dit de enige optie is. 
-        
-        De functie returned de beste tijd en beste station. 
         """
 
         richtingen = graph[huidig_station]
@@ -148,6 +146,8 @@ class Trein(object):
 
                 # Als spoor nog niet is bereden, kies beste tijd en station.         
                 else:
+                    
+
                     beste_tijd = int(row[1][0])
                     beste_station = row [0][0]
                     return beste_station, beste_tijd
@@ -161,32 +161,32 @@ class Trein(object):
             beste_tijd =  int(row[1][0])
             return beste_station, beste_tijd
  
- 
+    
     def pop(self, trajecten_algemeen, sporen):
-      """
-      Deze functie verwijdert de laatste verbinding uit de lijst trajecten, en 
-      uit traject wanneer de tijd is overschreden.
-      """
-     
+        """" 
+        Deze functie verwijdert de laatste verbinding uit de lijst trajecten, en 
+        uit traject wanneer de tijd is overschreden.
+        """
+      
         a = self.traject[-1]
         b = self.traject[-2]
         laatste_verbinding = {b:a}
         
         pop = self.traject.pop() 
-         
+        
         pop2 = trajecten_algemeen.pop()
         
-        # Als er maar 1 station in traject is, kun je niet deze niet verwijderen. 
+        # Als er maar 1 ding in lijst is, kun je niet deze niet verwijderen. 
         if not pop == pop2:
             trajecten_algemeen.append(pop2)
         
         # Verwijder laatste verbinding uit sporen. 
         if laatste_verbinding == sporen[-1]:
             pop3 = sporen.pop()
-             
+        
+    # Verwijder tijd van laatste verbinding van tijdsduur.     
     def verminderen(self, laatste_verbinding):
         """Deze functie verwijderd tijd van laatste verbinding uit tijdsduur."""
-        
         self.tijdsduur -= laatste_verbinding[1] 
         
         
