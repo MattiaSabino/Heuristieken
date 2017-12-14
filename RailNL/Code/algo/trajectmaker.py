@@ -5,8 +5,8 @@
 # In dit bestand worden de trajecten bepaald die worden gereden.  
 #
 
-import functies.functies
-import algo.start
+import classes.classes
+import functies.start
 
 
 
@@ -29,10 +29,10 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
     for i in range (RANGE):
         
         # Kies het start station. 
-        START = algo.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+        START = functies.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
         z = START
         
-        trein = functies.functies.Trein([START], [START], [z], 0)    
+        trein = classes.classes.Trein([START], [START], [z], 0)    
 
         # Loop door tot traject < 120 minuten. 
         while (trein.tijdsduur < MAX):

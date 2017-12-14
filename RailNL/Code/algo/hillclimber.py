@@ -8,8 +8,8 @@
 ## 
 
 
-import algo.start
-import functies.functies
+import functies.start
+import classes.classes
 import functies.scorefunctie
 import functies.minuten
 import functies.opschonen
@@ -34,9 +34,9 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
         for i in range (RANGE):
             
             # Kies de beginpunten van het traject.
-            START = algo.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+            START = functies.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
             z = START
-            trein = functies.functies.Trein([START], [START], [z], 0)    
+            trein = classes.classes.Trein([START], [START], [z], 0)    
 
             # While loop gaat door tot traject is kleiner of gelijk dan 180.
             while (trein.tijdsduur < MAX):
