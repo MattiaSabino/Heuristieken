@@ -27,7 +27,7 @@ HILL = 100000
 MAX = 120
 
 # Aantal trajecten.
-RANGE = 4
+RANGE = 1
  
 # Te gebruiken CSV's. 
 STATIONS = 'Data/StationsHolland.csv'
