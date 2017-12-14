@@ -18,9 +18,22 @@ start_time = time.clock()
 
 # Aantal iteraties van de hillclimber.
 
+<<<<<<< HEAD
+
+
+
+
+HILL = 100
+
+
+
+
+# AANTAL MINUTEN
+=======
 HILL = 20000
 
 # Aantal minuten.
+>>>>>>> 1eb392dafc7d573be62e7dac34edf30c50007e79
 MAX = 180
 
 # Aantal trajecten.
@@ -99,7 +112,7 @@ print(time.clock() - start_time, "seconds")
 
 #start_time = time.clock()
 
-visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
+visualisatie.lijnvoeringtest.visualisatie([[]], STATIONS, VERBINDINGEN)
 
 #print(time.clock() - start_time, "seconds")
 
