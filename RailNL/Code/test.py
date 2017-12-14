@@ -11,14 +11,18 @@ import functies.minuten
 import algo.hillclimber
 import inladen.inladen
 import time
-import visualisatie.lijnvoeringtest
+#import visualisatie.lijnvoeringtest
 
 # Houd de tijd bij. 
 start_time = time.clock()
 
 # Aantal iteraties van de hillclimber.
 
-HILL = 20000
+<<<<<<< HEAD
+HILL = 10000
+=======
+HILL = 10000000
+>>>>>>> 095222ce762fec434c83b515f4aa44d9d6615a69
 
 # Aantal minuten.
 MAX = 180
@@ -99,7 +103,7 @@ print(time.clock() - start_time, "seconds")
 
 #start_time = time.clock()
 
-visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
+#visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
 
 #print(time.clock() - start_time, "seconds")
 
