@@ -29,7 +29,7 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
     for i in range (RANGE):
         
         # Kies het start station. 
-        START = algo.start.kies_start(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+        START = algo.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
         z = START
         
         trein = functies.functies.Trein([START], [START], [z], 0)    
@@ -43,7 +43,7 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
 
             else:
                 # Beste optie kiezen aan de hand van de mogelijkheden.
-                beste_optie = trein.opties_nearest(sporen, graph, trajecten_algemeen, trein.eindstation[0])
+                beste_optie = trein.opties_randomconstr(sporen, graph, trajecten_algemeen, trein.eindstation[0])
                 
                 # Spoor toevoegen.
                 trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)

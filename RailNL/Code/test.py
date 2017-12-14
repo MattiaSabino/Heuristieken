@@ -13,7 +13,6 @@ import inladen.inladen
 import time
 import visualisatie.lijnvoeringtest
 
-
 # Houd de tijd bij. 
 start_time = time.clock()
 
@@ -22,19 +21,17 @@ start_time = time.clock()
 
 # AANTAL MINUTEN
 
-HILL = 20
+HILL = 12000
 
 # Aantal minuten.
-
-MAX = 120
-
+MAX = 180
 
 # Aantal trajecten.
-RANGE = 4
+RANGE = 11
  
 # Te gebruiken CSV's. 
-STATIONS = 'Data/StationsHolland.csv'
-VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
+STATIONS = 'Data/StationsNationaal.csv'
+VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
 
 # Pak de gebruikte lists.
 stations = inladen.inladen.stations(STATIONS)
