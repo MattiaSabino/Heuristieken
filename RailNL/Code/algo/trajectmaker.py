@@ -8,6 +8,11 @@
 import functies.functies
 import algo.start
 
+<<<<<<< HEAD
+
+# Deze functie bepaald het traject. 
+=======
+>>>>>>> 6bf4bcbc60c8e36b4f657473612c4599da04c172
 def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS):
     """
     Deze functie bepaalt welk traject er wordt gereden. 
@@ -30,7 +35,7 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
         
         trein = functies.functies.Trein([START], [START], [z], 0)    
 
-        # Loop door tot traject < 120 minuten. 
+        # Loop door tot traject < 180 minuten. 
         while (trein.tijdsduur < MAX):
             
             # Break als alle sporen zijn bereden en alle stations zijn bereden.
@@ -39,9 +44,15 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
 
             else:
                 # Beste optie kiezen aan de hand van de mogelijkheden.
+<<<<<<< HEAD
+                beste_optie = trein.opties_farest(sporen, graph, trajecten_algemeen, trein.eindstation[0])
+                
+                #Spoor toevoegen.
+=======
                 beste_optie = trein.opties(sporen, graph, trajecten_algemeen, trein.eindstation[0])
                 
                 # Spoor toevoegen.
+>>>>>>> 6bf4bcbc60c8e36b4f657473612c4599da04c172
                 trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)
                 
                 # Trein verplaatsen naar volgend spoor.
@@ -53,7 +64,7 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
                 # Tijd updaten.
                 trein.tijd(beste_optie[1])
 
-        # Indien de tijd hoger is dan 120 minuten, haal laatste verbinding weg.
+        # Indien de tijd hoger is dan 180 minuten, haal laatste verbinding weg.
         if trein.tijdsduur > MAX:
             trein.verminderen(beste_optie)
             trein.pop(trajecten_algemeen, sporen)

@@ -7,7 +7,7 @@
 
 def score(alle_trajecten, totale_tijdsduur, sporen, totaal_sporen):
     """
-    Deze functie berekend een score van de kwaliteit van de lijnvoering. 
+    Deze functie berekent een score van de kwaliteit van de lijnvoering. 
     
     De argumenten die worden mee gegeven zijn alle trajecten, 
     totaal aantal minuten gereden, sporen en totaal aantal sporen.

@@ -1,3 +1,7 @@
 # Matrix vs Graaf
 
-Een python bestand van een Matrix en een python bestand van een graaf.
+Graaf.py bevat een visualisatie aan de hand van een graaf.
+Matrix.py bevat en visualisatie aan de hand van een matrix.
+
+
+LET OP: Deze bestanden hoeven niet beoordeeld te worden.
