@@ -33,6 +33,6 @@ def score(alle_trajecten, totale_tijdsduur, sporen, totaal_sporen):
     # Bereken percentage gebruikte sporen.
     p = gebruikte_sporen / totaal_sporen
 
-    score = p*10000 - (t*20 + min/10000) 
+    score = p*10000 - (t*20 + min/1) 
     
     return score

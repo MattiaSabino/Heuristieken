@@ -15,11 +15,13 @@ import functies.minuten
 
 
 def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen1, sporen1, TOTAAL_SPOREN, TOTAAL_STATIONS):
-
+    """
+    Deze functie implementeert het hill climber algoritme.
+    
+    De functie returned de beste score van de hill climber, de tijdsduur, en de trajecten. 
+    """
     
     for j in range (HILL):
-        
-        #print("{} out of {}".format(j, HILL))
         
         alle_trajecten = []
         trajecten_algemeen =[] 
@@ -27,12 +29,13 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
         alle_tijdsduur = []
         
         for i in range (RANGE):
-
+            
+            # Kies de beginpunten van het traject.
             START = algo.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
             z = START
             trein = functies.functies.Trein([START], [START], [z], 0)    
 
-            # While loop gaat door tot traject is kleiner of gelijk dan 120.
+            # While loop gaat door tot traject is kleiner of gelijk dan 180.
             while (trein.tijdsduur < MAX):
             
                 if len(sporen) == TOTAAL_SPOREN and len(trajecten_algemeen) == TOTAAL_STATIONS:
@@ -42,7 +45,7 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
 
                     # Beste optie kiezen aan de hand van de mogelijkheden.
                     beste_optie = trein.opties(sporen, graph, trajecten_algemeen, trein.eindstation[0])
-                    #Spoor toevoegen.
+                    # Spoor toevoegen.
                     trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)
                     # Trein verplaatsen naar volgend spoor.
                     trein.volgend_spoor(beste_optie[0])
@@ -51,7 +54,7 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
                     # Tijd updaten.
                     trein.tijd(beste_optie[1])
 
-            # Als tijdsduur langer is dan de MAX. 
+            # Als tijdsduur langer is dan de MAX, moet het laatste spoor verwijderd worden. 
             if trein.tijdsduur > MAX:
                 trein.verminderen(beste_optie)
                 trein.pop(trajecten_algemeen, sporen)
@@ -66,6 +69,7 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
         score2 = functies.scorefunctie.score(alle_trajecten, totale_tijdsduur, sporen, TOTAAL_SPOREN)
         
         if len(trajecten_algemeen) == len(stations):
+            # Vergelijk de score van de vorige oplossing met de huidige oplossing. Bewaar de beste oplossing.
             if score2 > score1:
                 score1 = score2
                 alle_tijdsduur1 = alle_tijdsduur 
