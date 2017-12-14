@@ -2,14 +2,14 @@
 # Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
 # Case: Rail NL
 #
-#In dit bestand wordt de start bepaald per traject. 
+# In dit bestand wordt de start bepaald per traject. 
 #
 
 from random import randint
 
 def kies_start(sporen, verbindingen, uithoeken, trajecten_algemeen, stations):
     """
-    Deze functie bepaald de start van elk traject.
+    Deze functie bepaalt de start van elk traject.
     
     Het start punt wordt bepaald door: 
     1. Start vanuit de uithoeken. 

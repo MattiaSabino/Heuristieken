@@ -18,7 +18,11 @@ start_time = time.clock()
 
 # Aantal iteraties van de hillclimber.
 
+<<<<<<< HEAD
 HILL = 10000
+=======
+HILL = 10000000
+>>>>>>> 095222ce762fec434c83b515f4aa44d9d6615a69
 
 # Aantal minuten.
 MAX = 180
