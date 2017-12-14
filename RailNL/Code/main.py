@@ -18,19 +18,11 @@ import visualisatie.lijnvoeringtest
 start_time = time.clock()
 
 # Aantal iteraties van de hillclimber.
-<<<<<<< HEAD
-HILL = 500000
-=======
 
 
 # AANTAL MINUTEN
 
-<<<<<<< HEAD
 HILL = 2000
-=======
-HILL = 20000
->>>>>>> b16fc7646f0036e078b996e6d019ffdf6eb63d88
->>>>>>> 52bf0c52e3d05247758b7c00a80d4ea18f20ab1b
 
 # Aantal minuten.
 

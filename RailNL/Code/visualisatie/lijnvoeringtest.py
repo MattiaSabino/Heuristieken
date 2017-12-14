@@ -1,27 +1,25 @@
-
-# Course: Huristieken
-# Namen: Thomas Van Doren, Mattia Caso, Paulien Tensen. 
-# Case: Rail NL
-#
-# In dit bestand wordt een visualisatie gemaakt van de lijnvoering.
-#
-
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
 
 
+
+	# Lijsten
+
+
+	# Dit is een visualisatie aanvraag voor 4 trajecten:
+
+
+	# Dit is een visualisatie aanvraag voor 0 trajecten, dit levert een lege lijnvoering op:
+	#alleTrajecten = [[]]
+
 def visualisatie(x, STATIONS, VERBINDINGEN):
-    """"
-    Deze functie returned een plotje van de lijnvoering
-    m.b.v. matplotlib.
-    """
+    
     stations = []
     xcoordinates = []
     ycoordinates = []
     lengte = [] 
     
-    # Alle coordinaten van de stations worden ingeladen.
     with open(STATIONS) as f:
         reader = csv.reader(f)
         for row in reader:
@@ -38,14 +36,12 @@ def visualisatie(x, STATIONS, VERBINDINGEN):
     # 16 kleuren, voor 16 verschillende trajecten.
     colors = ["olive","orange", "green", "blue", "black", "red", "pink","yellow","purple","cyan","brown","magenta","aqua","teal","maroon","fuchsia" ]
     counter = 0
-
-    # Alle verbindingen tussen stations worden ingeladen.
     with open(VERBINDINGEN) as f:
         reader = csv.reader(f)
         
         for row in reader:
-            # De eerste row uit reader wordt overgeslagen.
             if counter != 0:
+                
                 
                 verbinding1.append(row[0])
                 verbinding2.append(row[1])
@@ -56,8 +52,7 @@ def visualisatie(x, STATIONS, VERBINDINGEN):
                 somTotaal = somTotaal + float(row[2])
             counter +=1
             
-    
-    # Er wordt een lijnvoering gemaakt van ALLE verbindingen en stations, kleur = grijs.        
+            
     for j in range(0,len(verbinding1)):
             counter1 = stations.index(verbinding1[j])
             verbinding1x = float(xcoordinates[counter1])
@@ -68,16 +63,13 @@ def visualisatie(x, STATIONS, VERBINDINGEN):
 
             plt.plot([verbinding1y,verbinding2y],[verbinding1x,verbinding2x], marker = 'o', color = '0.9')
 
-            # Geen ticks op de y en x as.
             plt.xticks([])
             plt.yticks([])
-
             # Ga door de lijst met alle trajecten.
             for i in range(0, len(x)):
                 
-                # Er wordt een lijnvoering gemaakt van de opgegeven trajecten met verschillende kleuren.
+                    # Ga alle stations af per traject.
                 for k in range(0,len(x[i])-1):
-
 
                     counterinput1 = stations.index(x[i][k])
                     verbinding1xinput = float(xcoordinates[counterinput1])
@@ -89,6 +81,15 @@ def visualisatie(x, STATIONS, VERBINDINGEN):
 
                     plt.plot([verbinding1yinput,verbinding2yinput],[verbinding1xinput,verbinding2xinput], marker = 'o', color = colors[i])
 
+
+                
+
+                
+                #plt.text((verbinding1y + verbinding2y) /2, (verbinding1x + verbinding2x) / 2, lengte[j])
+                
+
+
+            
 
     # Weergeef een aantal plaatsnamen om overzicht te krijgen.			
     plt.text(4.5,53, "Den Helder")

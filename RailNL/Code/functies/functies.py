@@ -173,19 +173,25 @@ class Trein(object):
             
             # Return beste station en kortste tijd.
             return beste_station, beste_tijd  
+          
 
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
     # Random kiezen, nog te maken!
     def opties_random(self, sporen, graph, trajecten_algemeen, huidig_station):
-<<<<<<< HEAD
         
         
 
-=======
-    
-
-    def opties1(self, sporen, graph, trajecten_algemeen, huidig_station):
-        """" Deze functie kiest het traject random"""
->>>>>>> 52bf0c52e3d05247758b7c00a80d4ea18f20ab1b
         richtingen = graph[huidig_station]
         
         i = randint(0, len(richtingen) -1)
@@ -292,15 +298,6 @@ class Trein(object):
          
     # Deze functie maakt de beslissing welk spoor er wordt genomen.  
     def opties_nearest(self, sporen, graph, trajecten_algemeen, huidig_station):
-<<<<<<< HEAD
-=======
-    
-        # Lege lijsten om stations aan toe te voegen. 
-
-        print(richtingen)
-          
-    def opties(self, sporen, graph, trajecten_algemeen, huidig_station):
->>>>>>> 52bf0c52e3d05247758b7c00a80d4ea18f20ab1b
         """
         Deze functie maakt de beslissing welk spoor er wordt genomen. 
         
@@ -310,12 +307,10 @@ class Trein(object):
         bereden is kies onbereden station. Als alle stations bereden zijn kies
         station met onbereden sporen. Als alle stations bereden zijn en alle
         sporen, ga terug als dit de enige optie is. 
+        
+        De functie returned de beste tijd en beste station. 
         """
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 52bf0c52e3d05247758b7c00a80d4ea18f20ab1b
         richtingen = graph[huidig_station]
         stations_niet_aangetikt = []
         stations_wel_aangetikt = []
@@ -382,8 +377,6 @@ class Trein(object):
 
                 # Als spoor nog niet is bereden, kies beste tijd en station.         
                 else:
-                    
-
                     beste_tijd = int(row[1][0])
                     beste_station = row [0][0]
                     return beste_station, beste_tijd
@@ -397,38 +390,30 @@ class Trein(object):
             beste_tijd =  int(row[1][0])
             return beste_station, beste_tijd
  
-    
+ 
     def pop(self, trajecten_algemeen, sporen):
-<<<<<<< HEAD
       
 
      
-=======
-        """" 
-        Deze functie verwijdert de laatste verbinding uit de lijst trajecten, en 
-        uit traject wanneer de tijd is overschreden.
-        """
-      
->>>>>>> 52bf0c52e3d05247758b7c00a80d4ea18f20ab1b
         a = self.traject[-1]
         b = self.traject[-2]
         laatste_verbinding = {b:a}
         
         pop = self.traject.pop() 
-        
+         
         pop2 = trajecten_algemeen.pop()
         
-        # Als er maar 1 ding in lijst is, kun je niet deze niet verwijderen. 
+        # Als er maar 1 station in traject is, kun je niet deze niet verwijderen. 
         if not pop == pop2:
             trajecten_algemeen.append(pop2)
         
         # Verwijder laatste verbinding uit sporen. 
         if laatste_verbinding == sporen[-1]:
             pop3 = sporen.pop()
-        
-    # Verwijder tijd van laatste verbinding van tijdsduur.     
+             
     def verminderen(self, laatste_verbinding):
         """Deze functie verwijderd tijd van laatste verbinding uit tijdsduur."""
+        
         self.tijdsduur -= laatste_verbinding[1] 
         
 
