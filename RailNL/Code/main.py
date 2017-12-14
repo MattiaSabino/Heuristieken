@@ -13,11 +13,18 @@ import inladen.inladen
 import time
 import visualisatie.lijnvoeringtest
 
+
 # Houd de tijd bij. 
 start_time = time.clock()
 
 # Aantal iteraties van de hillclimber.
 
+<<<<<<< HEAD
+HILL = 10000
+
+# Aantal minuten.
+MAX = 120
+=======
 
 
 
@@ -31,13 +38,14 @@ HILL = 20000
 # Aantal minuten.
 
 MAX = 180
+>>>>>>> 6bf4bcbc60c8e36b4f657473612c4599da04c172
 
 # Aantal trajecten.
-RANGE = 11
+RANGE = 5
  
 # Te gebruiken CSV's. 
-STATIONS = 'Data/StationsNationaal.csv'
-VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
+STATIONS = 'Data/StationsHolland.csv'
+VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
 
 # Pak de gebruikte lists.
 stations = inladen.inladen.stations(STATIONS)
@@ -60,10 +68,17 @@ uithoeken = inladen.inladen.uithoeken(graph, stations)
 
 # Maak de eerste oplossing en indelen. 
 trajecten = algo.trajectmaker.traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS)
+
 alle_tijdsduur_oud = trajecten[0]
 alle_trajecten_oud = trajecten[1]
 sporen_oud = trajecten[2]
 trajecten_algemeen_oud = trajecten[3]
+
+
+trajecten = functies.opschonen.opschonen(alle_trajecten_oud, alle_tijdsduur_oud,  verbindingen)
+
+alle_trajecten_oud = trajecten[0] 
+alle_tijdsduur_oud = trajecten[1] 
 
 # Bereken de score.
 totale_tijdsduur_oud = functies.minuten.minuten(alle_tijdsduur_oud)
@@ -81,12 +96,15 @@ trajecten_algemeen = resultaat[4]
 totale_tijdsduur = (functies.minuten.minuten(alle_tijdsduur))
 
 
+
+
 # Deze print statements nog verwijderen. 
 print("TRAJECTEN:")
 for i in range (len(alle_trajecten)):
     print()
     print("TRAJECT", i)
     print(alle_trajecten[i])
+    print("AANTAL GEBRUIKTE VERBINDINGEN::", len(alle_trajecten[i])-1)
     print(alle_tijdsduur[i])
     
 print()
@@ -102,14 +120,10 @@ print("AANTAL SPOREN:: ", len(sporen))
 print("AANTAL STATIONS:: ", len(trajecten_algemeen))
 print("TOTAAL AANTAL MINUTEN::", totale_tijdsduur)
 print()
-print(time.clock() - start_time, "seconds")
+print(time.clock() - start_time, "seconden")
 
-
-
-#start_time = time.clock()
 
 visualisatie.lijnvoeringtest.visualisatie([[]], STATIONS, VERBINDINGEN)
 
-#print(time.clock() - start_time, "seconds")
 
 
