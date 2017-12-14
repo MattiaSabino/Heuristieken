@@ -11,28 +11,30 @@ import functies.minuten
 import algo.hillclimber
 import inladen.inladen
 import time
-#import visualisatie.lijnvoeringtest
+import visualisatie.lijnvoeringtest
+
 
 # Houd de tijd bij. 
 start_time = time.clock()
 
 # Aantal iteraties van de hillclimber.
 
-<<<<<<< HEAD
-HILL = 10000
-=======
-HILL = 10000000
->>>>>>> 095222ce762fec434c83b515f4aa44d9d6615a69
+
+# AANTAL MINUTEN
+
+HILL = 2000
 
 # Aantal minuten.
-MAX = 180
+
+MAX = 120
+
 
 # Aantal trajecten.
-RANGE = 11
+RANGE = 4
  
 # Te gebruiken CSV's. 
-STATIONS = 'Data/StationsNationaal.csv'
-VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
+STATIONS = 'Data/StationsHolland.csv'
+VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
 
 # Pak de gebruikte lists.
 stations = inladen.inladen.stations(STATIONS)
@@ -55,10 +57,17 @@ uithoeken = inladen.inladen.uithoeken(graph, stations)
 
 # Maak de eerste oplossing en indelen. 
 trajecten = algo.trajectmaker.traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS)
+
 alle_tijdsduur_oud = trajecten[0]
 alle_trajecten_oud = trajecten[1]
 sporen_oud = trajecten[2]
 trajecten_algemeen_oud = trajecten[3]
+
+
+trajecten = functies.opschonen.opschonen(alle_trajecten_oud, alle_tijdsduur_oud,  verbindingen)
+
+alle_trajecten_oud = trajecten[0] 
+alle_tijdsduur_oud = trajecten[1] 
 
 # Bereken de score.
 totale_tijdsduur_oud = functies.minuten.minuten(alle_tijdsduur_oud)
@@ -73,7 +82,11 @@ alle_tijdsduur = resultaat[1]
 alle_trajecten = resultaat[2]
 sporen = resultaat[3]
 trajecten_algemeen = resultaat[4]
+
+
 totale_tijdsduur = (functies.minuten.minuten(alle_tijdsduur))
+
+
 
 
 # Deze print statements nog verwijderen. 
@@ -82,6 +95,7 @@ for i in range (len(alle_trajecten)):
     print()
     print("TRAJECT", i)
     print(alle_trajecten[i])
+    print("AANTAL GEBRUIKTE VERBINDINGEN::", len(alle_trajecten[i])-1)
     print(alle_tijdsduur[i])
     
 print()
@@ -97,14 +111,10 @@ print("AANTAL SPOREN:: ", len(sporen))
 print("AANTAL STATIONS:: ", len(trajecten_algemeen))
 print("TOTAAL AANTAL MINUTEN::", totale_tijdsduur)
 print()
-print(time.clock() - start_time, "seconds")
+print(time.clock() - start_time, "seconden")
 
 
+visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
 
-#start_time = time.clock()
-
-#visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
-
-#print(time.clock() - start_time, "seconds")
 
 

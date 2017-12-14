@@ -24,10 +24,8 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
     
     for j in range (HILL):
         
-<<<<<<< HEAD
-        
-=======
->>>>>>> 6bf4bcbc60c8e36b4f657473612c4599da04c172
+
+
         alle_trajecten = []
         trajecten_algemeen =[] 
         sporen = [] 
@@ -49,13 +47,10 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
                 else:
 
                     # Beste optie kiezen aan de hand van de mogelijkheden.
-<<<<<<< HEAD
+
                     beste_optie = trein.opties_nearest(sporen, graph, trajecten_algemeen, trein.eindstation[0])
                     #Spoor toevoegen.
-=======
-                    beste_optie = trein.opties(sporen, graph, trajecten_algemeen, trein.eindstation[0])
-                    # Spoor toevoegen.
->>>>>>> 6bf4bcbc60c8e36b4f657473612c4599da04c172
+
                     trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)
                     # Trein verplaatsen naar volgend spoor.
                     trein.volgend_spoor(beste_optie[0])

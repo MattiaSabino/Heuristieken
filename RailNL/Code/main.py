@@ -19,29 +19,18 @@ start_time = time.clock()
 
 # Aantal iteraties van de hillclimber.
 
-<<<<<<< HEAD
-HILL = 10000
-
-# Aantal minuten.
-MAX = 120
-=======
-
-
-
-
-
 
 # AANTAL MINUTEN
 
-HILL = 20000
+HILL = 2000
 
 # Aantal minuten.
 
-MAX = 180
->>>>>>> 6bf4bcbc60c8e36b4f657473612c4599da04c172
+MAX = 120
+
 
 # Aantal trajecten.
-RANGE = 5
+RANGE = 4
  
 # Te gebruiken CSV's. 
 STATIONS = 'Data/StationsHolland.csv'
@@ -93,6 +82,8 @@ alle_tijdsduur = resultaat[1]
 alle_trajecten = resultaat[2]
 sporen = resultaat[3]
 trajecten_algemeen = resultaat[4]
+
+
 totale_tijdsduur = (functies.minuten.minuten(alle_tijdsduur))
 
 
@@ -123,7 +114,7 @@ print()
 print(time.clock() - start_time, "seconden")
 
 
-visualisatie.lijnvoeringtest.visualisatie([[]], STATIONS, VERBINDINGEN)
+visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
 
 
 

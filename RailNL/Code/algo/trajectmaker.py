@@ -8,11 +8,10 @@
 import functies.functies
 import algo.start
 
-<<<<<<< HEAD
+
 
 # Deze functie bepaald het traject. 
-=======
->>>>>>> 6bf4bcbc60c8e36b4f657473612c4599da04c172
+
 def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS):
     """
     Deze functie bepaalt welk traject er wordt gereden. 
@@ -44,15 +43,9 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
 
             else:
                 # Beste optie kiezen aan de hand van de mogelijkheden.
-<<<<<<< HEAD
-                beste_optie = trein.opties_farest(sporen, graph, trajecten_algemeen, trein.eindstation[0])
-                
-                #Spoor toevoegen.
-=======
-                beste_optie = trein.opties(sporen, graph, trajecten_algemeen, trein.eindstation[0])
+                beste_optie = trein.opties_nearest(sporen, graph, trajecten_algemeen, trein.eindstation[0])
                 
                 # Spoor toevoegen.
->>>>>>> 6bf4bcbc60c8e36b4f657473612c4599da04c172
                 trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)
                 
                 # Trein verplaatsen naar volgend spoor.
