@@ -18,21 +18,20 @@ start_time = time.clock()
 
 # Aantal iteraties van de hillclimber.
 
-<<<<<<< HEAD
-HILL = 10000
-=======
-HILL = 10000000
->>>>>>> 095222ce762fec434c83b515f4aa44d9d6615a69
+
+
+HILL = 100000
+
 
 # Aantal minuten.
-MAX = 180
+MAX = 120
 
 # Aantal trajecten.
-RANGE = 11
+RANGE = 4
  
 # Te gebruiken CSV's. 
-STATIONS = 'Data/StationsNationaal.csv'
-VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
+STATIONS = 'Data/StationsHolland.csv'
+VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
 
 # Pak de gebruikte lists.
 stations = inladen.inladen.stations(STATIONS)

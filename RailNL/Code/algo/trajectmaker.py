@@ -30,7 +30,7 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
         
         trein = functies.functies.Trein([START], [START], [z], 0)    
 
-        # Loop door tot traject < 120 minuten. 
+        # Loop door tot traject < 180 minuten. 
         while (trein.tijdsduur < MAX):
             
             # Break als alle sporen zijn bereden en alle stations zijn bereden.
@@ -53,7 +53,7 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
                 # Tijd updaten.
                 trein.tijd(beste_optie[1])
 
-        # Indien de tijd hoger is dan 120 minuten, haal laatste verbinding weg.
+        # Indien de tijd hoger is dan 180 minuten, haal laatste verbinding weg.
         if trein.tijdsduur > MAX:
             trein.verminderen(beste_optie)
             trein.pop(trajecten_algemeen, sporen)
