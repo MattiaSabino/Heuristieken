@@ -22,7 +22,7 @@ start_time = time.clock()
 
 # AANTAL MINUTEN
 
-HILL = 2000
+HILL = 20
 
 # Aantal minuten.
 
