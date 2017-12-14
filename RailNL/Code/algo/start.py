@@ -72,13 +72,6 @@ def kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations):
             
             # Return station. 
             return z
-            
-   # for i in range (b):
-     #   plek = stations[i]['Station']
-       # if not plek in trajecten_algemeen:
-         #   z = plek
-           # trajecten_algemeen.append(z)
-            #return z
     
     # Wanneer op alle uithoeken is begonnen, begin dan random. 
     i = randint(0, len(stations) -1)

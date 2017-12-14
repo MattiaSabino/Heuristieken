@@ -10,6 +10,7 @@
 import functies.functies
 import algo.start
 
+
 # Deze functie bepaald het traject. 
 def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_SPOREN, TOTAAL_STATIONS):
 
@@ -35,9 +36,11 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
 
             else:
                 # Beste optie kiezen aan de hand van de mogelijkheden.
-                beste_optie = trein.opties(sporen, graph, trajecten_algemeen, trein.eindstation[0])
+                beste_optie = trein.opties_farest(sporen, graph, trajecten_algemeen, trein.eindstation[0])
+                
                 #Spoor toevoegen.
                 trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)
+                
                 # Trein verplaatsen naar volgend spoor.
                 trein.volgend_spoor(beste_optie[0])
                 # Huiding station updaten.
