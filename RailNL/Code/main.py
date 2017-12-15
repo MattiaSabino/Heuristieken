@@ -11,7 +11,7 @@ import functies.minuten
 import algo.hillclimber
 import inladen.inladen
 import time
-import visualisatie.lijnvoeringtest
+import visualisatie.visualisatie
 
 
 # Houd de tijd bij. 
@@ -114,7 +114,11 @@ print()
 print(time.clock() - start_time, "seconden")
 
 
+<<<<<<< HEAD
 #visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
+=======
+visualisatie.visualisatie.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
+>>>>>>> 25c0211fa1f46647dd8d2a56b9ff0b114edad624
 
 
 
