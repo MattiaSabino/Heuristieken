@@ -21,7 +21,7 @@ start_time = time.clock()
 
 # AANTAL MINUTEN
 
-HILL = 12000
+HILL = 1000000
 
 # Aantal minuten.
 MAX = 180

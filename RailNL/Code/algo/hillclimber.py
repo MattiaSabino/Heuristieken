@@ -7,7 +7,6 @@
 #
 ## 
 
-
 import functies.start
 import classes.classes
 import functies.scorefunctie
