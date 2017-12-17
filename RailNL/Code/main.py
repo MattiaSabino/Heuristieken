@@ -26,15 +26,15 @@ HILL = 1000000
 
 # Aantal minuten.
 
-MAX = 120
+MAX = 180
 
 
 # Aantal trajecten.
-RANGE = 4
+RANGE = 11
  
 # Te gebruiken CSV's. 
-STATIONS = 'Data/StationsHolland.csv'
-VERBINDINGEN = 'Data/ConnectiesHolland.csv' 
+STATIONS = 'Data/StationsNationaal.csv'
+VERBINDINGEN = 'Data/ConnectiesNationaal.csv' 
 
 # Pak de gebruikte lists.
 stations = inladen.inladen.stations(STATIONS)
@@ -114,7 +114,11 @@ print()
 print(time.clock() - start_time, "seconden")
 
 
+<<<<<<< HEAD
+#visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
+=======
 visualisatie.visualisatie.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
+>>>>>>> 25c0211fa1f46647dd8d2a56b9ff0b114edad624
 
 
 

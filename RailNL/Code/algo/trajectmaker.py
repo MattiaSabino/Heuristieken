@@ -29,7 +29,11 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
     for i in range (RANGE):
         
         # Kies het start station. 
+<<<<<<< HEAD
+        START = algo.start.kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+=======
         START = functies.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+>>>>>>> 25c0211fa1f46647dd8d2a56b9ff0b114edad624
         z = START
         
         trein = classes.classes.Trein([START], [START], [z], 0)    

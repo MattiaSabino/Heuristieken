@@ -22,7 +22,6 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
     """
     
     for j in range (HILL):
-        
 
 
         alle_trajecten = []
@@ -33,7 +32,11 @@ def hillclimber(score1, alle_trajecten1, alle_tijdsduur1, HILL, RANGE, MAX, stat
         for i in range (RANGE):
             
             # Kies de beginpunten van het traject.
+<<<<<<< HEAD
+            START = algo.start.kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+=======
             START = functies.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
+>>>>>>> 25c0211fa1f46647dd8d2a56b9ff0b114edad624
             z = START
             trein = classes.classes.Trein([START], [START], [z], 0)    
 
