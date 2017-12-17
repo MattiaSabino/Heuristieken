@@ -1,9 +1,13 @@
 # Functies
 
 Deze map bevat 3 functies:
-- start.py: Zoekt uit waar de hill climber moet beginnen (ofwel random ofwel uithoeken)
-- minuten.py: Hierin staat de functie minuten. De totale tijdsduur wordt opgeteld.
+- functies.py: bevat een class=Trein.
+Hierin staat het actuele station(station waar trein nu is), het volgend_spoor (
+volgend spoor bepalen), de tijd(traject tijd bijhouden), spoortoevoegen (spoor 
+toevoegen aan traject), opties(maakt beslissing welk spoor er wordt gekozen), 
+pop(verwijderd laatste station uit traject, wanneer tijd wordt overschreden) en
+ verminderen(haal van totale tijd de laatste tijd af als minuten zijn overschreden).
+- minuten.py: hierin staat de functie minuten. De totale tijdsduur wordt opgeteld.
 - scorefunctie.py: Hierin wordt de score functie gereturnd. (score functie te 
 vinden in de eerste Readme(map Heuristieken). 
-- opschonen.py: Is verantwoordelijk voor het verwijderen van overbodige sporen na het maken van een lijnvoering.
 

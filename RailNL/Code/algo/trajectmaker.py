@@ -5,8 +5,8 @@
 # In dit bestand worden de trajecten bepaald die worden gereden.  
 #
 
-import classes.classes
-import functies.start
+import functies.functies
+import algo.start
 
 
 
@@ -29,14 +29,10 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
     for i in range (RANGE):
         
         # Kies het start station. 
-<<<<<<< HEAD
-        START = algo.start.kies_start2(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
-=======
-        START = functies.start.kies_start3(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
->>>>>>> 25c0211fa1f46647dd8d2a56b9ff0b114edad624
+        START = algo.start.kies_start(sporen, verbindingen, uithoeken, trajecten_algemeen, stations)
         z = START
         
-        trein = classes.classes.Trein([START], [START], [z], 0)    
+        trein = functies.functies.Trein([START], [START], [z], 0)    
 
         # Loop door tot traject < 120 minuten. 
         while (trein.tijdsduur < MAX):
@@ -47,7 +43,7 @@ def traject_maker(RANGE, MAX, stations, verbindingen, uithoeken, graph, TOTAAL_S
 
             else:
                 # Beste optie kiezen aan de hand van de mogelijkheden.
-                beste_optie = trein.opties_randomconstr(sporen, graph, trajecten_algemeen, trein.eindstation[0])
+                beste_optie = trein.opties_nearest(sporen, graph, trajecten_algemeen, trein.eindstation[0])
                 
                 # Spoor toevoegen.
                 trein.spoor_toevoegen(sporen, trein.eindstation[0], beste_optie)

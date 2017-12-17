@@ -11,7 +11,8 @@ import functies.minuten
 import algo.hillclimber
 import inladen.inladen
 import time
-import visualisatie.visualisatie
+import visualisatie.lijnvoeringtest
+import algo.hillclimber2
 
 
 # Houd de tijd bij. 
@@ -22,7 +23,9 @@ start_time = time.clock()
 
 # AANTAL MINUTEN
 
-HILL = 1000000
+HILL = 10000
+
+HILL2 = 100000
 
 # Aantal minuten.
 
@@ -30,7 +33,7 @@ MAX = 180
 
 
 # Aantal trajecten.
-RANGE = 11
+RANGE = 10
  
 # Te gebruiken CSV's. 
 STATIONS = 'Data/StationsNationaal.csv'
@@ -73,6 +76,14 @@ alle_tijdsduur_oud = trajecten[1]
 totale_tijdsduur_oud = functies.minuten.minuten(alle_tijdsduur_oud)
 score_oud = functies.scorefunctie.score(alle_trajecten_oud, totale_tijdsduur_oud, sporen_oud, TOTAAL_SPOREN)
 
+print()
+print("Nearest Neigbor")
+print("SCORE WAS: ", score_oud)
+print("AANTAL SPOREN WAS: ", len(sporen_oud))
+print("AANTAL STATIONS WAS: ", len(trajecten_algemeen_oud))
+print("TOTAAL AANTAL MINUTEN WAS: ", totale_tijdsduur_oud)
+print()
+
 # Pas de hillclimber toe.
 resultaat = algo.hillclimber.hillclimber(score_oud, alle_trajecten_oud, alle_tijdsduur_oud, HILL, RANGE, MAX, stations, verbindingen, uithoeken, graph, trajecten_algemeen_oud, sporen_oud, TOTAAL_SPOREN, TOTAAL_STATIONS)
 
@@ -83,42 +94,69 @@ alle_trajecten = resultaat[2]
 sporen = resultaat[3]
 trajecten_algemeen = resultaat[4]
 
-
 totale_tijdsduur = (functies.minuten.minuten(alle_tijdsduur))
 
-
-
-
-# Deze print statements nog verwijderen. 
-print("TRAJECTEN:")
-for i in range (len(alle_trajecten)):
+for i in range(len(alle_trajecten)):
     print()
-    print("TRAJECT", i)
     print(alle_trajecten[i])
-    print("AANTAL GEBRUIKTE VERBINDINGEN::", len(alle_trajecten[i])-1)
     print(alle_tijdsduur[i])
-    
-print()
-print("SCORE WAS::", score_oud)
-print("AANTAL SPOREN WAS::", len(sporen_oud))
-print("AANTAL STATIONS WAS::", len(trajecten_algemeen_oud))
-print("TOTAAL AANTAL MINUTEN WAS::", totale_tijdsduur_oud)
-print()
+    print()
 
 print()
-print("SCORE :::", score)
-print("AANTAL SPOREN:: ", len(sporen))
-print("AANTAL STATIONS:: ", len(trajecten_algemeen))
-print("TOTAAL AANTAL MINUTEN::", totale_tijdsduur)
+print("Nearest Neigbor Hillclimber")
+print("SCORE: ", score)
+print("AANTAL SPOREN: ", len(sporen))
+print("AANTAL STATIONS: ", len(trajecten_algemeen))
+print("TOTAAL AANTAL MINUTEN: ", totale_tijdsduur)
 print()
+
+
 print(time.clock() - start_time, "seconden")
 
+start_time1 = time.clock()
 
-<<<<<<< HEAD
-#visualisatie.lijnvoeringtest.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
-=======
-visualisatie.visualisatie.visualisatie(alle_trajecten, STATIONS, VERBINDINGEN)
->>>>>>> 25c0211fa1f46647dd8d2a56b9ff0b114edad624
+nieuw_traject = algo.hillclimber2.hillclimber2(alle_trajecten, alle_tijdsduur, totale_tijdsduur, trajecten_algemeen, graph, sporen, MAX, TOTAAL_SPOREN, score, HILL2, verbindingen)
+
+def_score = nieuw_traject[2]
+def_trajecten = nieuw_traject[0]
+def_tijden = nieuw_traject[1]
+def_sporen = nieuw_traject[3]
+def_trajecten_algemeen = nieuw_traject[4]
+def_totaal_tijd = nieuw_traject[5]
+
+
+for i in range(len(def_trajecten)):
+    print()
+    print(def_trajecten[i])
+    print(def_tijden[i])
+    print()
+
+print()
+print("Nearest Neigbor Hillclimber 2.0")
+print("SCORE: ", def_score)
+print("AANTAL SPOREN: ", len(def_sporen))
+print("AANTAL STATIONS: ", len(def_trajecten_algemeen))
+print("TOTAAL AANTAL MINUTEN:", def_totaal_tijd)
+print()
+
+
+
+
+
+
+print(time.clock() - start_time1, "seconden")
+
+
+
+
+
+
+
+
+
+
+
+visualisatie.lijnvoeringtest.visualisatie(nieuw_traject[0], STATIONS, VERBINDINGEN)
 
 
 

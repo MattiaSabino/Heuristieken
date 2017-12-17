@@ -47,11 +47,12 @@ class Trein(object):
     def spoor_toevoegen(self, sporen, huidig_station, beste_optie):
         """"Deze functie voegt het spoor toe en onthoudt de verbindingen."""
         
+
         h = huidig_station
         b = beste_optie[0]
         verbinding1 = {h:b}
         verbinding2 = {b:h}
-        
+
         # Als verbindingen nog niet in sporen zitten, voeg toe aan sporen.
         if not verbinding1 in sporen and not verbinding2 in sporen:
             sporen.append(verbinding1)
@@ -129,7 +130,7 @@ class Trein(object):
                 #print(sporen)
                 
                 # Als sporen bij station al zijn bereden.
-                if verbinding1 in sporen or verbinding2 in sporen:
+                if not verbinding1 in sporen and not verbinding2 in sporen:
                     onbereden_sporen.append(row)
                     
             
