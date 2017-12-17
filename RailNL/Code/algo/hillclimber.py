@@ -7,9 +7,14 @@
 #
 ## 
 
+<<<<<<< HEAD
 
 import algo.start
 import functies.functies
+=======
+import functies.start
+import classes.classes
+>>>>>>> 08bd12da3ad32682fe187db8075da1ef76eed78b
 import functies.scorefunctie
 import functies.minuten
 import functies.opschonen

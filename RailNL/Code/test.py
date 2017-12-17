@@ -22,7 +22,11 @@ start_time = time.clock()
 
 # AANTAL MINUTEN
 
+<<<<<<< HEAD
 HILL = 20
+=======
+HILL = 1000000
+>>>>>>> 08bd12da3ad32682fe187db8075da1ef76eed78b
 
 # Aantal minuten.
 
